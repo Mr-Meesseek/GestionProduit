@@ -11,7 +11,10 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+ integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+ crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
 	
 </head>
 <body>
@@ -39,14 +42,17 @@
                         <th>Nom</th>
                         <th>Prix</th>
                         <th>Quantité</th>
+                        <th>categorie</th>
                         <th>Action</th>
                     </tr>
                     <c:forEach items="${products}" var="p">
                         <tr>
-                            <td>${p.id}</td>
+                            	<td>${p.id}</td>
 								<td>${p.name}</td>
 								<td>${p.prix}</td>
 								<td>${p.quantite}</td>
+								<td>${p.categorie.nom}</td>
+								
 								<td>	
                                 <a href="controlleur?id=${p.id}&action=supprimer" class="btn btn-danger">
                                     <i class="fas fa-trash"></i>

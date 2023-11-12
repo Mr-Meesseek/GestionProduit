@@ -1,10 +1,23 @@
 package entities;
+import entities.Categorie;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+
+
+@Entity
 public class Produit {
+	@Id
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
 int id ; 
 String name ;
- Double prix ; 
+Double prix ; 
  int quantite ;
+@ManyToOne
+ private Categorie categorie; 
 public Produit(int id, String name, Double prix, int quantite) {
 	super();
 	this.id = id;
@@ -50,6 +63,21 @@ public Produit() {
 @Override
 public String toString() {
 	return "Produit [id=" + id + ", name=" + name + ", prix=" + prix + ", quantite=" + quantite + "] \n";
+}
+public Produit(int id, String name, Double prix, int quantite, Categorie categorie) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.prix = prix;
+	this.quantite = quantite;
+	this.categorie = categorie;
+}
+public Categorie getCategorie() {
+	return categorie;
+}
+public void setCategorie(Categorie categorie) {
+	this.categorie = categorie;
 } 
+
  
 }
